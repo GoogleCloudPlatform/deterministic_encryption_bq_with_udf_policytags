@@ -52,7 +52,7 @@ tf files named as `3_*.tf` deploy the application-level resources:
 
 ## Usage
 
-1. **Configure Variables:** Edit the `var-sample-argolis.auto.tfvars` file to set values for project ID, region, key ring name, key name, user emails for Clare and Bob, and dataset/table details.
+1. **Configure Variables:** Edit the `var-sample.auto.tfvars` file to set values for project ID, region, key ring name, key name, user emails for Clare and Bob, and dataset/table details.
 2. **Initialize Terraform:** Run `terraform init` to initialize the working directory.
 3. **Plan and Apply:** Use `terraform plan` to preview the changes and `terraform apply` to create the resources.
 4. **Create a wrapped DEK Tink key:** After creating all resources via terraform, run this query as the Admin (or Data Owner) in the BQ UI to obtain a wrapped key using the KMS KEK:

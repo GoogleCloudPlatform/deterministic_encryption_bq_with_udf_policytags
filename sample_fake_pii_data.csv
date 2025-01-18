@@ -1,0 +1,31 @@
+customer_id,SSN,gender,birthdate,maiden name,last name,first name,address,city,state,zip,phone,email,cc_type,CCN,cc_cvc,cc_expiredate
+1,175-35-1976,m,4/29/1988,Rosa,White,Johnson,10931 Bigge Rd,Menlo Park,CA,94025,408 491-7223,jwhite@domain.com,m,5274-4267-6454-5516,123,2010/06/25
+1,514-11-8605,f,12/25/1974,Amaker,Borden,Ashley,4469 Sherman Street,Goff,KS,66428,785-939-6046,aborden@domain.com,m,5374-4637-8881-3020,713,2011/02/01
+1,213-41-8715,f,4/21/1958,Pinson,Green,Marjorie,309 63rd St. #411,Oakland,CA,94618,415 981-7020,mgreen@domain.com,v,4911-9761-5244-6147,258,2009/02/25
+1,524-05-7857,m,3/25/1962,Anster,Munsch,Jerome,2183 Roy Alley,Centennial,CO,80112,303-901-6123,jmunsch@domain.com,m,5184-3807-3679-8221,612,2010/03/01
+1,489-31-8650,m,1964/09/06,Porter,Aragon,Robert,3181 White Oak Drive,Kansas City,MO,66215,811-645-6936,raragon@domain.com,v,4929-3813-3261-4295,911,2011/12/01
+1,514-34-7968,f,1986/05/27,Nicholson,Russell,Jacki,3097 Better Street,Kansas City,MO,66215,913-227-6106,jrussell@domain.com,a,345359696201544,232,2010/01/01
+1,505-87-5814,f,1963/09/23,Mcclain,Venson,Lillian,539 Kyle Street,Wood River,NE,68883,307-583-8759,lvenson@domain.com,d,30804866594738,471,2011/12/01
+1,694-06-5615,m,1969/10/02,Kings,Conley,Thomas,570 Nancy Street,Morrisville,NC,27560,919-651-6779,tconley@domain.com,v,4913 4811 5814 8111,731,2010/10/01
+1,641-40-9761,M,1978/01/12,Kurtz,Jackson,Charles,1074 Small Street,New York,NY,10011,215-847-4915,cjackson@domain.com,m,5218 0184 2703 9266,892,2011/11/01
+1,421-30-1596,f,1980/04/09,Linden,Davis,Susan,4221 Bedford Street,Jasper,AL,35501,205-221-9156,sdavis@domain.com,v,4913 4034 9069 8783,33,2011/04/01
+1,461-90-5760,f,1975/01/04,Butter,Watson,Gail,3414 Gore Street,Houston,TX,77002,713-547-3414,gwatson@domain.com,v,4531 1753 6071 1112,694,2011/09/01
+1,664-05-8560,f,1953/07/11,Onwunli,Garrison,Lisa,515 Hillside Drive,Lake Charles,LA,70629,337-965-2982,lgarrison@domain.com,v,4539 5365 7426 5825,680,2011/06/01
+2,751-07-2027,f,1968/02/16,Spain,Renfro,Julie,4031 Arron Rosa Drive,Kaunakakai,HI,96748,807-564-1638,jrenfro@domain.com,m,5325 3253 9519 6624,238,2009/03/01
+2,559-89-1701,m,1952/01/20,Mcafee,Heard,James,2865 Driftwood Road,San Jose,CA,95129,407-374-0031,jheard@domain.com,v,4531 4220 6921 9909,311,2010/09/01
+2,624-87-9171,m,1980/01/16,Frazier,Reyes,Danny,3500 Diane Street,San Luis Obispo,CA,93401,805-369-0464,dreyes@domain.com,v,4531 0065 1968 5602,713,2009/11/01
+2,449-47-3145,m,1982/06/14,Feusier,Anster,Mark,4983 Chapel Street,Houston,TX,77077,281-597-5517,mAnster@domain.com,v,4553 0071 1294 7415,953,2010/05/01
+2,477-31-0292,m,1961/03/10,Vasquez,Mceachern,Monte,453 Oral Lake Road,Minneapolis,MN,55401,955-415-3707,mmceachern@domain.com,m,5527 1247 5043 7780,889,2009/03/01
+2,457-05-61424,m,1955/09/20,Pennebaker,Diaz,Christopher,581 Thrash Trail,Dallas,TX,75247,903-624-9156,cdiaz@domain.com,m,5297 1561 5669 1938,584,2011/08/01
+2,044-39-6954,m,1967/05/28,Spain,Lowe,Tim,1620 Maxwell Street,East Hartford,CT,6108,864-755-0293,tlowe@domain.com,m,5144 8691 2773 1108,616,2011/10/01
+2,587-07-2382,f,1958/10/24,Dickerson,Oyola,Lynette,2489 O Conner Street,Pascagoula,MS,39567,227-937-2056,loyola@domain.com,v,4531 9929 3033 9308,991,2011/07/01
+2,421-94-3340,f,1953/07/17,Kroeger,Morrison,Adriane,4693 Retreat Avenue,Birmingham,AL,35209,205-271-1807,amorrison@domain.com,v,4539 0831 3203 0728,322,2009/12/01
+2,451-84-3726,m,1950/06/09,Parmer,Santos,Thomas,173 Lunetta Street,Fort Worth,TX,76104,944-859-1393,tsantos@domain.com,v,4713 6984 4943 6160,767,2011/09/01
+2,304-65-3466,m,1965/02/10,Peru,Faulkner,Victor,1843 Olive Street,Toledo,OH,43602,419-344-3832,vfaulkner@domain.com,m,5548 0243 6333 5664,276,2010/02/01
+3,325-89-2781,m,1977/08/19,Miley,Iorio,Albert,4899 University Hill Road,Springfield,IL,62701,217-615-6419,aiorio@domain.com,v,4913 6734 7571 5015,347,2010/02/01
+3,465-77-5822,f,1964/06/20,Summers,Kaminski,Teresa,1517 Gambler Lane,Houston,TX,77006,281-901-2148,tkaminski@domain.com,m,5395 0703 4128 0178,721,2009/10/01
+3,615-24-6432,m,1979/08/18,Banas,Edwards,Rick,4254 Walkers Ridge Way,Gardena,CA,90248,621-991-3620,redwards@domain.com,m,5253 8501 0071 3058,701,2010/08/01
+3,687-06-8665,f,1976/05/24,Robbins,Peacock,Stacey,3393 Lowe Street,Raleigh,NC,27612,919-571-2339,speacock@domain.com,m,5445 8601 4508 6804,436,2011/02/01
+3,205-55-0627,f,1950/03/26,Sanford,Nelson,Agnes,4213 High Meadow Lane,Avoca,PA,18641,574-484-8704,anelson@domain.com,m,5443 4428 0144 0036,496,2010/02/01
+3,404-15-2454,f,1984/09/21,Garcia,Townsend,Mireille,2877 Glen Street,Paducah,KY,42003,274-407-7254,mtownsend@domain.com,v,4549 8219 0485 7598,710,2011/03/01
+3,151-35-2458,f,1952/11/19,Stockdale,Zwick,Rebecca,784 Beechwood Avenue,Piscataway,NJ,8854,907-814-6733,rzwick@domain.com,v,5251 5971 4219 4616,173,2011/02/01
