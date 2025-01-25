@@ -102,9 +102,9 @@ variable "persona_clear_text_data_reader" {
 #   description = "The Service Account used by terraform to deploy infrastructure."
 # }
 
-variable "wrapped_dek_keyset_bytes_instructions" {
+variable "instructions_to_obtain_the_wrapped_dek_keyset_bytes" {
   type = string
-  description = "Explanation on how to work with the DEK wrapped key"
+  description = "Explanation on how to obtain and configure the DEK wrapped key"
 
   default =    <<-EOS
 
@@ -123,11 +123,24 @@ variable "wrapped_dek_keyset_bytes_instructions" {
                              SELECT
                                FORMAT('%T', FROM_BASE64(TO_BASE64(
                                  KEYS.NEW_WRAPPED_KEYSET(
-                                   'gcp-kms://projects/PROJECT_ID/locations/GCP_REGION/keyRings/KMS_KEY_RING_ID/cryptoKeys/KMS_KEY_ID',
+                                   'KMS_KEY_PATH',
                                    'DETERMINISTIC_AEAD_AES_SIV_CMAC_256'
                                  )
                                ))) as wrapped_dek_keyset_bytes;
                     */
                     --   2 - Paste the result string in the "wrapped_dek_keyset_bytes.txt" file
+  EOS
+}
+
+variable "instructions_to_run_the_udfs" {
+  type = string
+  description = "Explanation on how to run the User-Defined Functions"
+
+  default =    <<-EOS
+                    --   3 - Test using the UDF directly: Only Admin, Data Owner and Clear text Data reader can use the UDF directly.
+                    /*
+                             SELECT `PROJECT_ID.udf_routines_container.custom_masking_routine_deterministically_encrypt_column`('plaintext1');
+                             SELECT `PROJECT_ID.udf_routines_container.custom_masking_routine_deterministically_decrypt_column`('RESULT_FROM_ENCRYPTING_THE_STRING_ABOVE');
+                    */
   EOS
 }

@@ -49,7 +49,7 @@ resource "google_bigquery_routine" "custom_masking_routine_deterministically_dec
           KEYS.KEYSET_CHAIN(
             "gcp-kms://${google_kms_crypto_key.bq_aead_demo_key_01.id}",
             
-            ${var.wrapped_dek_keyset_bytes_instructions}
+            ${replace(var.instructions_to_obtain_the_wrapped_dek_keyset_bytes, "KMS_KEY_PATH", "gcp-kms://${google_kms_crypto_key.bq_aead_demo_key_01.id}")}
             ${file("${path.module}/wrapped_dek_keyset_bytes.txt")}
           ),
           CAST(FROM_BASE64(
@@ -61,5 +61,7 @@ resource "google_bigquery_routine" "custom_masking_routine_deterministically_dec
         )
         AS STRING
       )
+ 
+    ${replace(var.instructions_to_run_the_udfs, "PROJECT_ID", "${google_project.prj_aead_demo_bq.project_id}")}
   EOS
 }

@@ -7,6 +7,7 @@ wrapped_dek_keyset_bytes.txt
 
 # Ignore lock files
 *.terraform.lock.hcl
+*.terraform.tfstate.lock.info
 
 # Ignore override files
 *.tfoverride
