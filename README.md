@@ -31,7 +31,7 @@ The terraform code provisions a BigQuery Dataset and a Table with PII Data in cl
 ### 1. Infrastructure
 
 tf files named as `1_*.tf` deploy the infrastructure-level resources:
-  * A folder to contain the necessary projects.
+  * `fld_aead_encryption_demos`: A folder to contain the necessary projects.
   * `prj_aead_demo_bq`: A Google Cloud Project to contain the bigquery datasets and the GCS bucket.
   * `prj_aead_demo_keys`: A Google Cloud Project to contain the KMS key
 
@@ -114,6 +114,16 @@ This setup uses a Customer-Managed Encryption Key (CMEK), giving you full contro
   * a Key Encryption Key (KEK), which is created in KMS by the terraform code.
 
 * **Encryption Function:** The SQL queries will use the BigQuery AEAD function `DETERMINISTIC_ENCRYPT`, which requires both the KMS KEK and the DEK. The users running the SQL queries in this example only need `cloudkms.cryptoKeyVersions.useToDecryptViaDelegation` IAM permission over the KMS KEK.
+
+# How to delete all resources that this demo created in your Google Cloud environment
+
+1. Get the `PROJECT_ID_OR_NUMBER` of both, `prj_aead_demo_bq` and `prj_aead_demo_keys`, then run this comand:
+      
+    `gcloud projects delete PROJECT_ID_OR_NUMBER`
+
+2. Get the folder id (number) of `fld_aead_encryption_demos`, then run this command:
+    
+    `gcloud resource-manager folders delete FOLDER_ID`
 
 # Disclaimer
 This is not an officially supported Google product. This project is not
