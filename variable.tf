@@ -102,31 +102,32 @@ variable "persona_clear_text_data_reader" {
 #   description = "The Service Account used by terraform to deploy infrastructure."
 # }
 
-variable "wrapped_dek_keyset_bytes" {
+variable "wrapped_dek_keyset_bytes_instructions" {
   type = string
-  description =  <<-EOS
-    (Required) The KMS-wrapped DEK Tink key used to encrypt data in BQ.
-    A DEK TinkKey created as per https://cloud.google.com/bigquery/docs/reference/standard-sql/aead_encryption_functions#keysnew_wrapped_keyset
+  description = "Explanation on how to work with the DEK wrapped key"
 
-    THIS IS A SECRET!!!! : Althoug this DEK key is encrypted, several users in this architecture (including persona_encrypted_text_data_reader)
-                           need access to "cloudkms.cryptoKeyVersions.useToDecryptViaDelegation" on the KEK that encrypts this DEK Tink Key.
-                           Since users have that permission, they can use DETERMINISTIC_DECRYPT_STRING function to decrypt all data in the table.
-                           KEEPING THIS DEK A SECRET is the only way to prevent them from read data in clear text.
-    
-    INSTRUCTIONS:
-      1 - After creating all resources, run this query in the BQ UI to obtain a wrapped key using the KMS KEK:
-          SELECT
-            FORMAT('%T', FROM_BASE64(TO_BASE64(
-              KEYS.NEW_WRAPPED_KEYSET(
-                'gcp-kms://projects/PROJECT_ID/locations/GCP_REGION/keyRings/KMS_KEY_RING_ID/cryptoKeys/KMS_KEY_ID',
-                'DETERMINISTIC_AEAD_AES_SIV_CMAC_256'
-              )
-            ))) as wrapped_dek_keyset_bytes;
+  default =    <<-EOS
 
-      2 - Paste the result string in the "default" value below:
-  EOS
+                    -- The first_level_keyset parameter (KMS-wrapped DEK Tink key used to encrypt data in BQ) must be a A BYTES literal
+                    -- As per documentation in https://cloud.google.com/bigquery/docs/reference/standard-sql/aead_encryption_functions#keyskeyset_chain
 
-  default =  <<-EOS
-    b'\x0a$\x00wT)...____REPLACE_THIS_ENTIRE_LINE_WITH_THE_WRAPPED_KEY_GENERATED_IN_THE_BIGQUERY_UI____...\x88\xfbmE\x9e\xf9p'
+                    -- A DEK TinkKey created as per https://cloud.google.com/bigquery/docs/reference/standard-sql/aead_encryption_functions#keysnew_wrapped_keyset
+                    -- THIS IS A SECRET!!!! : Althoug this DEK key is encrypted, several users in this architecture (including persona_encrypted_text_data_reader)
+                    --                       need access to "cloudkms.cryptoKeyVersions.useToDecryptViaDelegation" on the KEK that encrypts this DEK Tink Key.
+                    --                       Since users have that permission, they can use DETERMINISTIC_DECRYPT_STRING function to decrypt all data in the table.
+                    --                       KEEPING THIS DEK A SECRET is the only way to prevent them from read data in clear text.
+                    -- 
+                    -- INSTRUCTIONS:
+                    --   1 - After creating all resources, either the Data Owner or the Admin has to run this query in the BQ UI to obtain a wrapped key using the KMS KEK:
+                    /*
+                             SELECT
+                               FORMAT('%T', FROM_BASE64(TO_BASE64(
+                                 KEYS.NEW_WRAPPED_KEYSET(
+                                   'gcp-kms://projects/PROJECT_ID/locations/GCP_REGION/keyRings/KMS_KEY_RING_ID/cryptoKeys/KMS_KEY_ID',
+                                   'DETERMINISTIC_AEAD_AES_SIV_CMAC_256'
+                                 )
+                               ))) as wrapped_dek_keyset_bytes;
+                    */
+                    --   2 - Paste the result string in the "wrapped_dek_keyset_bytes.txt" file
   EOS
 }

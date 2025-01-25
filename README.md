@@ -71,7 +71,7 @@ tf files named as `3_*.tf` deploy the application-level resources:
 Use the [different personas](#BigQuery-Table-Data-Viewer-access) to test results with these queries from the BigQuery UI:
 ~~~~sql
     -- Test reading data - Each user will see data differently
-    SELECT email, * FROM `PROJECT_ID.DATA_DATASET_ID.fake_pii_data` WHERE ssn="514-30-2668"; -- gets row with email 'jrussell@domain.com'
+    SELECT email, * FROM `PROJECT_ID.DATA_DATASET_ID.fake_pii_data` WHERE ssn="514-34-7968"; -- gets row with email 'jrussell@domain.com'
 
     -- Test using the UDF directly: Only Admin, Data Owner and Clear text Data reader can use the UDF directly.
     SELECT `PROJECT_ID.udf_routines_container.custom_masking_routine_deterministically_encrypt_column`('plaintext1');

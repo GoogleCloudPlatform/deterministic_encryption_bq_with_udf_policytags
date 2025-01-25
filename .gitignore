@@ -3,6 +3,7 @@
 
 # Ignore variables files
 **/var-prod.auto.tfvars
+wrapped_dek_keyset_bytes.txt
 
 # Ignore lock files
 *.terraform.lock.hcl

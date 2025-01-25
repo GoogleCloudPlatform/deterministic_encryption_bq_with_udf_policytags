@@ -48,10 +48,10 @@ resource "google_bigquery_routine" "custom_masking_routine_deterministically_enc
         DETERMINISTIC_ENCRYPT( -- RETURNS BYTES: Needs to be converted to STRING
           KEYS.KEYSET_CHAIN(
             "gcp-kms://${google_kms_crypto_key.bq_aead_demo_key_01.id}",
-            
-            -- As per documentation in https://cloud.google.com/bigquery/docs/reference/standard-sql/aead_encryption_functions#keyskeyset_chain
-            -- The first_level_keyset parameter must be a A BYTES literal:
-            ${var.wrapped_dek_keyset_bytes}
+
+            ${var.wrapped_dek_keyset_bytes_instructions}
+            ${file("${path.module}/wrapped_dek_keyset_bytes.txt")}
+
           ),
           col_to_encrypt,
 

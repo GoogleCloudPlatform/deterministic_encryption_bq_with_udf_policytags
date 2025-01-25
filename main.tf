@@ -37,4 +37,3 @@ terraform {
 #   # https://cloud.google.com/docs/terraform/authentication
 #   impersonate_service_account = var.sa_terraform_org
 # }
-
